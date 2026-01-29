@@ -29,12 +29,15 @@ function getTurboRules() {
 
 const nextConfig = {
   reactStrictMode: true,
+  output: "export", // <--- Add this
+  basePath: "/heat-capacity", // <--- Add this (matches repo name)
   experimental: {
     turbo: {
       rules: getTurboRules(),
     },
   },
   images: {
+    unoptimized: true, // <--- Required for static export
     remotePatterns: [
       {
         protocol: "https",
